@@ -1,12 +1,26 @@
-from currency_converter import CurrencyConverter
+import eel
+from pyowm import OWM
+
+def get_bishkek_weather():
+    city = "Bishkek, KG"
+
+    owm = OWM('83fb857ad999187748b6eeea5df78703')
+    mgr = owm.weather_manager()
+
+    observation = mgr.weather_at_place(city)
+    w = observation.weather
+
+    print(w.temperature('celsius')['temp'])
 
 
 
-converter = CurrencyConverter()
 
 
-def convert_cur(value: float, from_cur: str, to_cur: str):
-    return converter.convert(value, from_cur, to_cur)
+
+
+
+
+
 
 
 

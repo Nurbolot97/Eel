@@ -1,11 +1,11 @@
 import eel
-from back.convert import convert_cur
+from back.converter import get_bishkek_weather
+
 
 
 @eel.expose
-def convert_cur_py(value: float, from_cur: str, to_cur: str):
-    return convert_cur(value, from_cur, to_cur)
-
+def give_bishkek_weather():
+    return get_bishkek_weather()
 
 
 
